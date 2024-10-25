@@ -1,12 +1,18 @@
 ---
+type Technology = {
+    name?: string;
+    icon?: string;
+};
+
 interface Props {
     url: string;
     image: string;
     title: string;
     body: string;
+    technologies?: Technology[];
 }
 
-const { url, image, title, body } = Astro.props;
+const { url, image, title, body, technologies } = Astro.props;
 ---
 
 <li class="card">
@@ -26,5 +32,11 @@ const { url, image, title, body } = Astro.props;
         <p class="card__txt">
             {body}
         </p>
+        <div class="technologies">
+            {technologies.map((tech) => <div class="tech"><img width="25" height="25" src={tech.icon}/><div class="tech__name">{tech.name}</div></div>)}
+        </div>
+        <!-- <div>
+            {technologies.map(({name}) => console.log(name))}
+        </div> -->
     </a>
 </li>

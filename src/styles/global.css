@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    max-width: 540px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: justify;
 }
@@ -169,6 +169,19 @@ small, li {
     transform: scale(1.05);
 }
 
+.technologies {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    margin: 0.5rem 0 0;
+}
+
+.tech {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
 .link-card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
@@ -303,6 +316,10 @@ html.light {
 
 .light .card__txt {
     color: var(--text-light); 
+}
+
+.light .tech__name {
+    color: var(--text-light);
 }
 
 .light .btn {
